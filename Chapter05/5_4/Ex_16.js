@@ -1,5 +1,6 @@
 function countSeconds(howMany) {
     for (var i=1; i<=howMany; i++) {
+        console.log(i);
         setTimeout(function() {
             console.log(i);
         } , i * 1000);
@@ -13,10 +14,10 @@ function countSeconds2(howMany) {
     for (var i=1; i<=howMany; i++) {
         (function(currentI) {
             setTimeout(function() {
-                console.log(currentI)
+                console.log(currentI);
             } , currentI * 1000);
         })(i);
     }
 };
 
-countSeconds2(3);
+// countSeconds2(3);
