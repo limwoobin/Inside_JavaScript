@@ -1,0 +1,19 @@
+function calculate(a , b , c) {
+    return a * b + c;
+}
+
+function curry(func) {
+    var args = Array.prototype.slice.call(arguments , 1);
+    console.log(arguments);
+    console.log(args);
+
+    return function() {
+        return func.apply(null , args.concat(Array.prototype.slice.call(arguments)));
+    }
+}
+
+var new_func1 = curry(calculate , 2);
+console.log(new_func1(2,3));
+
+var new_func2 = curry(calculate , 1 , 3);
+console.log(new_func2(3));
