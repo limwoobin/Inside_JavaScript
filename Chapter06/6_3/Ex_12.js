@@ -16,4 +16,3 @@ var Person = function(arg) {
 
 var me = new Person();
 console.log(me.getName());
-// console.log(me.prototype.getName());
