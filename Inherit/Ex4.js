@@ -7,7 +7,7 @@ var obj = {
     
         inner = function() {
             console.log('inner' , this.value);
-        }
+        };
     
         inner();
     }

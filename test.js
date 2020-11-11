@@ -1,22 +1,21 @@
-function Person(arg) {
-    this.name = arg;
-}
+var obj = {a: 1};
 
-Person.prototype.getName = function() {
-    return this.name;
-}
+var copy = Object.assign(obj);
 
-var man = new Person('hyuntae');
-
-console.log(Person.hasOwnProperty('name'));
-console.log(Person.prototype.hasOwnProperty('getName'));
-
-console.log(man.hasOwnProperty('name'));
-console.log(man);
+console.log(obj);
+console.log(copy);
 
 
-var args = Array.prototype.slice.call([1,2,3] , 1);
-console.log(args);
+var x1 = 10;
+var x2 = Object.assign(x1);
 
-var args2 = Array.prototype.slice.apply([1,2,3] , [1,3]);
-console.log(args2);
+console.log(x1);
+console.log(x2);
+
+const o1 = { a: 1 };
+const o2 = { b: 2 };
+const o3 = { c: 3 };
+
+const object = Object.assign(o2, o1, o3);
+console.log(object); // { a: 1, b: 2, c: 3 }
+console.log(o1);  // { a: 1, b: 2, c: 3 }, 대상 객체 자체가 변경됨.
