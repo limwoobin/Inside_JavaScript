@@ -1,10 +1,33 @@
-function test() {
-    value = 5;
+class Test {
+    constructor(x , y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    get data() {
+        return this.x + this.y;
+    }
+
+    get funcData() {
+        return function() {
+            return this.x - this.y;
+        }
+    }
 }
 
-console.log(test());
-console.log(test);
+class Inher extends Test {
+    constructor(x , y , z) {
+        super(x,y);
+        this.z = z;
+    }
 
-test.status = 'OK';
+    get inData() {
+        return this.x + this.y + this.z;
+    }
+}
 
-console.log(test);
+var inh = new Inher(1,2,3);
+
+console.log(inh.inData);
+console.log(inh.data);
+console.log(inh.funcData());
