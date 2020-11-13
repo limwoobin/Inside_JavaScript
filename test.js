@@ -1,11 +1,24 @@
-function Test(x , y) {
-    this.x = x;
-    this.y = y;
+class Parent {
+    constructor(name) {
+        this.name = name;
+    }
 
-    this.toString = function() {
-        return this.x + ',' + this.y;
+    get getName() {
+        return function() {
+            return this.name;
+        }
     }
 }
 
-var a = new Test(1,3);
-console.log(a.toString());
+const parent = new Parent('xx');
+console.log(parent.getName());
+
+class Child extends Parent {
+    constructor(name) {
+        super(name);
+        this.name = name;
+    }
+}
+
+const child = new Child('yy');
+console.log(child.getName());
