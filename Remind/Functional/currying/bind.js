@@ -1,8 +1,9 @@
 Function.prototype.bind = function(thisArg) {
-    var fn = this,
+    var fn = this,  // myFunc()가 호출되면 this 는 print_all 함수가 된다.
     slice = Array.prototype.slice,
-    args = slice.call(arguments , 1);
+    args = slice.call(arguments , 1);   // myObj
     return function() {
+        // arguments -> 없음.
         return fn.apply(thisArg , args.concat(slice.call(arguments)));
     };
 }
